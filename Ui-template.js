@@ -19,7 +19,6 @@
  ****************************************/
 
 document.getElementById("app").innerHTML = `
-<div id="app">
   <aside id="sidebar">
     <div class="topline">
       <h1>Work Zone Planner <span class="badge">PRO</span></h1>
@@ -281,8 +280,11 @@ document.getElementById("app").innerHTML = `
   </aside>
 
   <div id="map"></div>
-</div>
+`;
 
+// Add the rest of the HTML that goes outside the #app div
+// These elements were in the body in the original but outside #app
+const printPanel = `
 <div class="print-panel" id="printPanel">
   <h2>Traffic Management Plan</h2>
   <div style="margin-bottom:12px;font-size:13px">
@@ -486,15 +488,10 @@ document.getElementById("app").innerHTML = `
     </div>
   </div>
 </div>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
-<script src="https://unpkg.com/@turf/turf@6.5.0/turf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tokml/0.4.0/tokml.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
-
 `;
+
+// Append print panel and other elements to body
+document.body.insertAdjacentHTML('beforeend', printPanel);
 
 /****************************************
  * PART 3 - UI TEMPLATE
