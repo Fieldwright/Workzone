@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Work Zone Planner Pro - Enhanced Edition</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css">
+
+<!-- ============================================
+     PART 0 - CSS STYLES (EXTERNAL)
+     File: styles.css
+     ============================================ -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================================
+     PART 1 - UI TEMPLATE (LOADED BY JAVASCRIPT)
+     File: ui-template.js
+     ============================================ -->
+<div class="offline-banner" id="offlineBanner">⚠️ Offline Mode - Changes saved locally</div>
+<button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+<button class="mobile-toggle" id="mobileToggle">☰ Menu</button>
+<div id="app"></div>
+
+<!-- ============================================
+     EXTERNAL LIBRARIES
+     ============================================ -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+<script src="https://unpkg.com/@turf/turf@6.5.0/turf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tokml/0.4.0/tokml.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+
+<!-- ============================================
+     APPLICATION MODULES - LOAD IN ORDER
+     ============================================ -->
+<!-- PART 2 --> <script src="config.js"></script>
+<!-- PART 3 --> <script src="ui-template.js"></script>
+<!-- PART 4 --> <script src="ui-setup.js"></script>
+<!-- PART 5 --> <script src="map-core.js"></script>
+<!-- PART 6 --> <script src="weather.js"></script>
+<!-- PART 7 --> <script src="calculations.js"></script>
+<!-- PART 8 --> <script src="device-management.js"></script>
+<!-- PART 9 --> <script src="ui-controls.js"></script>
+<!-- PART 10 --> <script src="data-persistence.js"></script>
+<!-- PART 11 --> <script src="field-view.js"></script>
+<!-- PART 12 --> <script src="utilities.js"></script>
+<!-- PART 13 --> <script src="app-init.js"></script>
+
+</body>
+</html>
